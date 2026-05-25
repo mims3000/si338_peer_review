@@ -1,0 +1,332 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    background-color: #f5f5f5;
+    color: #250e09;
+}
+
+/* Outer Background Container (for the second background image) */
+.outer-background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Second Background Image */
+.second-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.second-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+/* Journal Layout (appears on all pages with the journal-layout class) */
+.journal-layout .background-container {
+    position: relative;
+    width: 100%; /* Use 100% for full-width container */
+	max-width: 80%;
+    margin: 50px auto 0; /* Center the container horizontally with top margin */
+    z-index: 2;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+}
+
+/* Style for the journal background image */
+.background-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 2;
+	object-fit: fill;
+}
+
+.background-image img {
+    width: 100%;
+	height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Style for the grid container (on top of journal.png) */
+.grid-container {
+    position: absolute;
+    top: 6%; /* Remove top offset to align with journal.png */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for horizontal centering */
+    width: 80%; /* Use your desired width */
+    height: 35%; /* Fill the container height */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal width columns */
+    grid-template-rows: 1fr 1fr; /* Equal height rows */
+    gap: 50px 70px; /* Use your desired gap values */
+    padding: 12px;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+/* Style for each image container */
+.image-container {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Style for text containers */
+.text-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.text-container h2{
+    margin: 0;
+    color: #250e09;
+    font-family: "SN Pro", sans-serif;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+	margin-top: -8%;
+}
+
+/* Style for text inside containers */
+.text-container p {
+    margin: 0;
+    color: #250e09;
+    font-family: "SN Pro", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.about-card{
+    font-family: "SN Pro", sans-serif;
+}
+
+.about-card img{
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 47.5%;
+    border-radius: 10px;
+    border: 6px brown;
+}
+
+.about-card text{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    color: #000000;
+}
+
+/* Adjust sizing for each container*/
+.landscapes-container {
+    grid-column: 1;  
+    grid-row: 1; 
+    height: 150px; 
+    width: 95%; 
+}
+
+.home-container {
+    grid-column: 2; 
+    grid-row: 1; 
+    height: 160px; 
+    width: 95%; 
+}
+
+.arch-container {
+    grid-column: 1; 
+    grid-row: 2; 
+    height: 180px;
+    width: 95%; 
+}
+
+.food-container {
+    grid-column: 2; 
+    grid-row: 2; 
+    height: 200px;  
+    width: 95%;
+}
+
+
+.btn {
+  margin-top: auto;
+}
+.image-container img {
+    width: 100%; /* Fill the container width */
+    height: 100%; /* Fill the container height */
+    object-fit: cover; /* Maintain aspect ratio */
+    display: block;
+}
+
+/* Style for the overlay text */
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(24, 16, 22, 0.7);
+    color: rgb(255, 255, 255);
+    padding: 6px;
+    text-align: center;
+    font-family: "SN Pro", sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: large;
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+    width: 100%; /* Ensure overlay spans the full width of the container */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Hover effect for the overlay */
+.image-container:hover .image-overlay {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+
+/* Style for dropdown */
+.dropdown-header {
+    cursor: pointer;
+    color: #250e09;
+    font-family: "SN Pro", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-header::after {
+    content: "";
+    font-size: 12px;
+}
+
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f8ff;
+    position: absolute;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-header:focus + .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    color: #250e09;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #e0e0e0;
+}
+
+/* Navbar Customization */
+.navbar {
+    background-color: #f0f8ff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: #250e09;
+    text-decoration: none;
+    font-family: "SN Pro", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.nav-links li a:hover {
+    color: #AAB1E4;
+}
+
+
+.dropdown-header {
+    cursor: pointer;
+    color: #000000
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column for mobile */
+        grid-template-rows: repeat(4, auto); /* Four rows for the four containers */
+        gap: 6px;
+        padding: 8px;
+        width: 95%; /* Adjust width for mobile */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .journal-layout .background-container {
+        width: 95%;
+        max-width: 600px;
+        margin: 10px auto;
+        aspect-ratio: 2/3;
+    }
+
+    /* Adjust heights and widths for mobile */
+    .landscapes-container,
+    .home-container,
+    .arch-container,
+    .food-container {
+        grid-column: 1; /* All containers span the full width */
+        grid-row: auto; /* Let the grid assign rows automatically */
+        height: 140px; /* Custom height for mobile containers */
+        width: 100%; /* Full width for mobile */
+    }
+}
